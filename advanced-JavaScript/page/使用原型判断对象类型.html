@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function Person(name, age, job){
+            this.name = name;
+            this.age = age;
+            this.job = job;
+        }
+
+        Person.prototype = {
+            constructor: Person,
+            sayName: function(){
+                console.log(this.name);
+            }
+        }
+
+        var p1 = new Person('张三', 18, 'JavaScript');
+        var p2 = new Person('李四', 20, 'Java');
+
+        //切断p1与Person原型的关系
+        p1.__proto__ = null;
+
+        console.log(p1.constructor === Person);//false
+        console.log(p2.constructor === Person);//true
+
+        console.log(p1 instanceof Person);//false
+        console.log(p1 instanceof Object);//false
+
+        console.log(Person.prototype.isPrototypeOf(p1));//false
+        console.log(Person.prototype.isPrototypeOf(p2));//true
+
+        console.log(Object.getPrototypeOf(p1) === Person.prototype);//false
+        console.log(Object.getPrototypeOf(p1));//null
+        console.log(Object.getPrototypeOf(p2) === Person.prototype);//true
+        console.log(Object.getPrototypeOf(p2));//{constructor: ƒ, sayName: ƒ}
+    </script>
+</head>
+<body>
+
+</body>
+</html>

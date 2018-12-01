@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function Person(name, age, job){
+            this.name = name;
+            this.age = age;
+            this.job = job;
+            this.friends = ['小明', '小刚'];
+        }
+
+        Person.prototype = {
+            constructor: Person,
+            sayName: function(){
+                console.log(this.name);
+            },
+            /*
+            * param: property, 类型：String, 描述：属性
+            * return: 类型：Boolean，描述：返回true，属性只存在原型中
+            * */
+            hasPrototypeProperty: function(property){
+                return (property in this) && !this.hasOwnProperty(property);
+            }
+        };
+
+        var p = new Person('张三', 18, 'JavaScript');
+
+        console.log(p.hasPrototypeProperty('name'));//false, name不存在原型中
+        console.log(p.hasPrototypeProperty('sayName'));//true, sayName只存在原型中
+
+        p.sayName = function(){
+            console.log('没有名字');
+        }
+
+        console.log(p.hasPrototypeProperty('sayName'));//false, sayName不是只在原型中存在
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

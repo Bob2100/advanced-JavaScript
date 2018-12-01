@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        String.prototype.start
+        var a = 'hello world';
+        console.log(a.startsWith('h'));
+        
+        Date.prototype.addDay = function (count) {
+            return new Date(this.getFullYear(), this.getMonth(), this.getDate() + count);
+        }
+
+        var _date = new Date();
+        console.log(_date.addDay(2));//Mon Oct 29 2018 00:00:00 GMT+0800 (中国标准时间)，后天
+        console.log(_date.addDay(-1));//Fri Oct 26 2018 00:00:00 GMT+0800 (中国标准时间)，昨天
+    </script>
+</head>
+<body>
+
+</body>
+</html>

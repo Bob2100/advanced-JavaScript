@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function Person(name, age, job){
+				this.name = name;
+				this.age = age;
+				this.job = job;
+				this.sayName = sayName;
+			}
+			
+			function sayName(){
+				alert(this.name);
+			}
+			var p1 = new Person('zhangsan', 18, 'JavaScript');
+			var p2 = new Person('lisi', 20, 'Java');
+			
+//			alert(p1 instanceof Object);
+//			alert(p2.constructor == Person);
+			
+			var arr = new Array();
+//			alert(arr.constructor == Object);
+			
+			var person = {};
+			console.log(p1.sayName == p2.sayName);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

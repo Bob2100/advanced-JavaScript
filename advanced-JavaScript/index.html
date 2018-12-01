@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		demo
+	</body>
+	<script type="text/javascript">
+		function Human(name, age){
+			this.name = name;
+			this.age = age;
+			this.humanSex = '男/女';
+		}
+		
+		Human.prototype.getHumanSex = function(){
+			return this.humanSex;
+		}
+		
+		function Person(name, age){
+			this.name = name;
+			this.age = age;
+			this.personSex = '男';
+		}
+		
+		//Person继承Human
+		Person.prototype = new Human();
+		Person.prototype.getPersonSex = function(){
+			return this.personSex;
+		}
+		
+		var personObj = new Person('张三', 12);
+		
+		console.log(personObj.getHumanSex());
+		console.log(personObj.getPersonSex());
+		console.log(personObj.humanSex);
+	</script>
+</html>

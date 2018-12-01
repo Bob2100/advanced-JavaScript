@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var person1 = new Object();
+			person1.name = 'Bob';
+			person1.age = 18;
+			person1.job = '全栈工程师';
+			person1.sayName = function(){
+				console.log(this.name);
+			};
+			
+			var person2 = new Object();
+			person2.name = '张三';
+			person2.age = 20;
+			person2.job = 'Java工程师';
+			person2.sayName = function(){
+				console.log(this.name);
+			};
+			
+			var person3 = new Object();
+			person3.name = '李四';
+			person3.age = 22;
+			person3.job = '前端工程师';
+			person3.sayName = function(){
+				console.log(this.name);
+			};
+			var person = {
+				name: 'Bob',
+				age: 18,
+				job: '全栈工程师',
+				sayName: function(){
+					console.log(this.name);
+				}
+			};
+			
+			function createPerson(name, age, job){
+				var o = new Object();
+				o.name = name;
+				o.age = age;
+				o.job = job;
+				o.sayName = function(){
+					console.log(this.name);
+				};
+				return o;
+			}
+			
+			var p1 = createPerson('Bob', 18, '全栈工程师');
+			var p2 = createPerson('张三', 20, 'Java工程师');
+			var p3 = createPerson('李四', 22, '前端工程师');
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

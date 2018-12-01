@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function Person(name, age, job){
+            this.name = name;
+            this.age = age;
+            this.job = job;
+        }
+
+        var p1 = new Person('张三', 18, 'JavaScript');
+        console.log(Person.prototype);//{constructor: ƒ}
+
+        Person.prototype = {
+            constructor: Person,
+            sayName: function(){
+                console.log(this.name);
+            }
+        }
+        var p2 = new Person('李四', 20, 'Java');
+        console.log(Person.prototype);//{constructor: ƒ, sayName: ƒ}
+
+        // p1.sayName();//Uncaught TypeError: p1.sayName is not a function
+        p2.sayName();//李四
+    </script>
+</head>
+<body>
+
+</body>
+</html>
