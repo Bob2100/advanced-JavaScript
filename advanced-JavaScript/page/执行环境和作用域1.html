@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script>
-        var name = 'win';
+        var mName = 'Rose';
         function father(){
-            console.log('father');
+            var fName = 'Jack';
             function son() {
-                console.log('son');
+                var sName = 'Tom';
+
+                function sayWord(){
+                    var word = 'my name: ' + sName + ', father name: ' + fName + ', mother name: ' + mName;
+                    console.log(word);
+                }
+                sayWord();
             }
             son();
         }
