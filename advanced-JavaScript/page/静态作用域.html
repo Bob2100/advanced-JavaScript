@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var value = 1;
+
+
+
+        function bar() {
+            var value = 2;
+            var value2 = 'v2';
+
+            function foo() {
+                console.log(value);
+                console.log(value2);
+
+            }
+
+            foo();
+        }
+
+        bar();
+        console.dir(bar);
+    </script>
+</body>
+</html>
